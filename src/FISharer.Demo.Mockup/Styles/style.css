@@ -6,6 +6,7 @@
 
     --large-font-size: 42px;
     --middle-font-size: 38px;
+    --small-font-size: 18px;
 
     --btn-animate-transition: 0.5s;
 }
@@ -25,6 +26,11 @@ body {
 
 img {
     width: 100%;
+}
+hr {
+    background: #000;
+    height: 1px;
+    margin: 2px 0px;
 }
 .title {
     font-weight: 700;
@@ -96,7 +102,24 @@ img {
     top: 4px;
     width: 25px;
 }
+.link {
+    text-decoration: none;
+    line-height: 30px;
+    padding: 2px;
+    color:midnightblue;
+}
+.link::before {
+    content: "- ";
+}
 
+.header {
+    position: absolute;
+    left: 10%;
+}
+.header .container {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
 .preloader {
     position: absolute;
     width: 100%;
@@ -112,6 +135,51 @@ img {
     content: "";
     animation: prelaoder 1.5s ease-in-out infinite;
 }
+.burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    width: 30px;
+    height: 30px;
+}
+.burger:hover {
+    background-color: rgba(173, 216, 230, 0.171);
+    backdrop-filter: blur(2px);
+    border: 1px rgba(173, 216, 230, 0.4) solid;
+}
+.burger-line {
+    margin: 2px 0;
+    height: 1px;
+    width: 20px;
+    background-color: lightblue;
+}
+.menu {
+    height: 100%;
+    width: 100%;
+    top: 43px;
+    position: absolute;
+    min-width: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 999;
+}
+.menu__body {
+    padding: 10px;
+    position: absolute;
+    left: 10%;
+    width: 80%;
+    background-color: rgb(221, 221, 221);
+}
+.menu-part__title {
+    font-weight: 300;
+    font-size: var(--middle-font-size) - 5px;
+}
+.menu__item {
+    color: rgb(81, 95, 109);
+    font-weight: 200;
+    font-size: var(--small-font-size);
+}
 .start-container {
     height: 100vh;
     display: flex;
@@ -122,18 +190,6 @@ img {
     background-size:cover
 }
 
-/* .b-subtitle {
-    display: flex;
-    align-items: center;
-}
-.b-subtitle .subtitle {
-    display: block;
-}
-.b-subtitle .decoration-line {
-    display: inline-block;
-    margin-left: 80px;
-    width: 100%;
-} */
 .b-title {
     position: absolute;
     left: 10%;
