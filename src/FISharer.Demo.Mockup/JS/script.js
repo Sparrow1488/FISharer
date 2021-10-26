@@ -9,4 +9,9 @@ $(document).ready(function () {
     setTimeout(() => {
         hidePreloader();
     }, 1500);
+
+    // $(".menu").show();
+    $(".burger").click(function() {
+        $(".menu").toggle("slow");
+    });
 });
