@@ -3,26 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="Styles/reset-base-styles.css">
     <link rel="stylesheet" href="Styles/style.css">
     <title>FISharer</title>
 </head>
 <body>
     <div id="wrapper">
+        <div class="preloader">
+            <div class="preloader__content">
+                <h1 class="preloader__text title title_light"> Loading </h1>
+            </div>
+        </div>
         <main id="main">
             <div class="start-container">
                 <div class="container">
-                    <div class="block-title">
-                        <h1 class="title">Easy start <br> Easy share</h1>
-                    </div>
-                    <div class="btns-block">
-                        <a class="share-btn btn btn_large">
-                            Share Quickly
-                        </a>
-                        <a class="download-btn btn btn_large">
-                            Fast Download
-                        </a>
+                    <div class="start-container__content">
+                        <div class="b-title">
+                            <div class="b-subtitle">
+                                <h3 class="subtitle subtitle_light"> Good day </h3>
+                                <!-- <div class="decoration-line decoration-line_light"></div>  -->
+                            </div>
+                            <h1 class="title title_light">
+                                Easy to <br>
+                                Start Sharing
+                            </h1>
+                        </div>
+                        <div class="b-buttons">
+                            <a href="#" class="share-btn btn btn_large btn_blue"> <img class="btn__icon" src="/Img/share-icon-1.png" alt="Share-icon"> Share Quickly </a>
+                            <a href="#" class="share-btn btn btn_large btn_purple"> <img class="btn__icon" src="/Img/download-icon-1.png" alt="Downlaod-icon"> Fast download </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -31,5 +41,8 @@
 
         </footer>
     </div>
+
+    <script src="/JQuery/jquery-3.6.0.min.js"></script>
+    <script src="/JS/script.js"></script>
 </body>
 </html>
