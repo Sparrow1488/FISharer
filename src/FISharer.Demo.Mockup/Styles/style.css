@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
 :root {
-    /* --main-bg-color: linear-gradient(#5657ca 40%, #928fd8); */
     --white-color: #fff;
+    --base-white-color: #fff;
 
     --large-font-size: 42px;
     --middle-font-size: 38px;
-    --small-font-size: 18px;
+    --small-font-size: 20px;
+    --default-font-size: 18px;
 
     --btn-animate-transition: 0.5s;
 }
@@ -14,6 +15,7 @@
     font-size: 22px;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
+    color: var(--base-white-color);
 }
 body {
     background: var(--main-bg-color);
@@ -21,14 +23,14 @@ body {
 .container {
     max-width: 1080px;
     margin: 0 auto;
-    padding: 50px 0;
+    padding: 50px 10%;
 }
 
 img {
     width: 100%;
 }
 hr {
-    background: #000;
+    background: var(--white-color);
     height: 1px;
     margin: 2px 0px;
 }
@@ -39,12 +41,19 @@ hr {
 .title_light {
     color: var(--white-color);
 }
+.title_small {
+    font-weight: 400;
+    font-size: var(--small-font-size);
+}
 .subtitle {
     font-weight: 400;
     font-size: var(--middle-font-size) - 30px;
 }
 .subtitle_light {
     color: var(--white-color);
+}
+.text {
+    font-size: var(--default-font-size);
 }
 .decoration-line {
     height: 1px;
@@ -184,27 +193,52 @@ hr {
 .start-container {
     height: 100vh;
     display: flex;
-    
+    padding-top: 20px;
     justify-content: center;
-    align-items: center;
     background: url("/Img/main-bg-1.jpg") center center no-repeat;
     background-size:cover
 }
 
 .b-title {
-    position: absolute;
-    left: 10%;
     top: 80px;
 }
 .b-buttons {
     position: relative;
-    bottom: -12rem;
+    bottom: -20rem;
     display: flex;
     flex-direction: column;
 }
 .b-buttons .btn {
     flex: 0 0 50%;
 }
+
+
+.about-site-container {
+    height: 100vh;
+    background: url("/Img/main-bg-2.jpg") center center no-repeat;
+    background-size: cover;
+}
+.service-card {
+    margin: 10px 0;
+}
+.service-card__description {
+    padding: 5px 0;
+}
+.service-card__description_row {
+    display: flex;
+    align-items: center;
+}
+.service__icon {
+    width: 40px;
+    margin-right: 5px;
+}
+.service-card__link a {
+    display: flex;
+    justify-content: center;
+    line-height: 20px;
+    font-size: var(--default-font-size);
+}
+
 
 .footer {
     /* height: 200px; */
