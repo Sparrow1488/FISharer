@@ -144,7 +144,8 @@ hr {
     padding-bottom: 5px;
 }
 .preloader {
-    position: absolute;
+    overflow: hidden;
+    position: fixed;
     width: 100%;
     height: 100%;
     background-color: rgb(52, 51, 121);
@@ -284,10 +285,20 @@ hr {
     font-size: var(--tiny-font-size);
 }
 
+.up-btn {
+    position: fixed;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.164);
+    bottom: 20px;
+    right: 10px;
+    height: 40px;
+    width: 40px;
+    border-radius: 100px;
+}
+
 
 .footer {
-    /* height: 200px; */
-    background-color: gray 2%;
+    height: 100vh;
+    background: linear-gradient(rgba(214, 214, 214, 0.774), rgba(95, 95, 95, 0.836));
 }
 
 @keyframes prelaoder {
