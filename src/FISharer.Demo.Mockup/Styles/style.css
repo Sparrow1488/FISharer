@@ -195,7 +195,7 @@ hr {
     display: flex;
     padding-top: 20px;
     justify-content: center;
-    background: url("/Img/main-bg-1.jpg") center center no-repeat;
+    background: url("/Img/main-bg-1-min.jpg") center center no-repeat;
     background-size:cover
 }
 
@@ -215,7 +215,7 @@ hr {
 
 .about-site-container {
     height: 100vh;
-    background: url("/Img/main-bg-2.jpg") center center no-repeat;
+    background: url("/Img/main-bg-2-min.jpg") center center no-repeat;
     background-size: cover;
 }
 .service-card {
