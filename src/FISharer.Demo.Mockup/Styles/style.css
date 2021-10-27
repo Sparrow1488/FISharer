@@ -2,12 +2,14 @@
 
 :root {
     --white-color: #fff;
+    --dark-color: #000;
     --base-white-color: #fff;
 
     --large-font-size: 42px;
     --middle-font-size: 38px;
     --small-font-size: 20px;
     --default-font-size: 18px;
+    --tiny-font-size: 15px;
 
     --btn-animate-transition: 0.5s;
 }
@@ -41,6 +43,9 @@ hr {
 .title_light {
     color: var(--white-color);
 }
+.title_dark {
+    color: var(--dark-color);
+}
 .title_small {
     font-weight: 400;
     font-size: var(--small-font-size);
@@ -54,6 +59,15 @@ hr {
 }
 .text {
     font-size: var(--default-font-size);
+}
+.text_small {
+    font-size: var(--tiny-font-size);
+}
+.text_blue {
+    color: cornflowerblue;
+}
+.text_purple {
+    color: rgb(91, 36, 194);
 }
 .decoration-line {
     height: 1px;
@@ -237,6 +251,37 @@ hr {
     justify-content: center;
     line-height: 20px;
     font-size: var(--default-font-size);
+}
+
+
+
+.subscriptions-container {
+    height: 100vh;
+    background: url("/Img/main-bg-3-min.jpg") center center no-repeat;
+    background-size: cover;
+}
+.subscriptions-cards {
+    display: flex;
+    justify-content: center;
+}
+.subscription-card {
+    padding: 5px;
+    border: 1px rgba(78, 78, 78, 0.048) solid;
+    margin: 5px 0;
+    backdrop-filter: blur(2px);
+    box-shadow: 10px 8px 12px rgba(71, 71, 71, 0.356);
+}
+.possibility-list__item {
+    line-height: 18px;
+}
+.possibility-list__item::before {
+    content: "• ";
+}
+.subscription__btn {
+    display: flex;
+    justify-content: center;
+    line-height: 18px;
+    font-size: var(--tiny-font-size);
 }
 
 
