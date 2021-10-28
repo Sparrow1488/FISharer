@@ -21,6 +21,7 @@
 }
 body {
     background: var(--main-bg-color);
+    overflow-x: hidden;
 }
 .container {
     max-width: 1080px;
