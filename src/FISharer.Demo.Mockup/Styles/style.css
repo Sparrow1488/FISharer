@@ -167,8 +167,8 @@ hr {
     justify-content: center;
     align-items: center;
     border-radius: 100px;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
 }
 .burger:hover {
     background-color: rgba(173, 216, 230, 0.171);
@@ -182,10 +182,10 @@ hr {
     background-color: lightblue;
 }
 .menu {
+    padding: 30px 0;
     display: none;
     height: 100%;
     width: 100%;
-    top: 43px;
     position: absolute;
     min-width: 100%;
     background: rgba(0, 0, 0, 0.55);
@@ -263,10 +263,6 @@ hr {
     background: url("/Img/main-bg-3-min.jpg") center center no-repeat;
     background-size: cover;
 }
-.subscriptions-cards {
-    display: flex;
-    justify-content: center;
-}
 .subscription-card {
     padding: 5px;
     border: 1px rgba(78, 78, 78, 0.048) solid;
@@ -288,6 +284,7 @@ hr {
 }
 
 .up-btn {
+    opacity: 0.3;
     position: fixed;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.164);
     bottom: 20px;
@@ -295,6 +292,10 @@ hr {
     height: 40px;
     width: 40px;
     border-radius: 100px;
+}
+.up-btn:hover {
+    opacity: 1;
+    cursor: pointer;
 }
 .nav-btns {
     position: fixed;

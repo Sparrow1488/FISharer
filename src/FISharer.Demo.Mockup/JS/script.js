@@ -1,6 +1,6 @@
 const mainBlocks = document.querySelectorAll(".main__item");
 const navBtns = document.querySelectorAll(".nav__btn");
-const activeBtnColors = ["#C70039", "#FFC300", "#1A5276", "#F7DC6F", "#F4F6F7"];
+const activeBtnColors = ["#85929E", "#F4F6F7", "#E5E8E8", "#D4E6F1", "#EBDEF0", "#FAE5D3"];
 
 function hidePreloader(){
     $(".preloader").animate({ opacity: 0 }, "slow");
@@ -42,6 +42,29 @@ $(document).ready(function () {
 
     $(".burger").click(function() {
         $(".menu").toggle("slow");
+    });
+
+    window.addEventListener("click", function(e) {
+        const menu = document.querySelector(".menu");
+        if (e.target == menu) {
+            $(menu).slideUp();
+        }
+    }); 
+
+    let serviceCardsWasDisplay = false;
+    function startServiceCardAnimation(){
+        if(!serviceCardsWasDisplay){
+            const cards = $(".service-card");
+            $(cards).css("opacity", "0");
+            $(cards).animate({ opacity: 1 }, 1500);
+        }
+        serviceCardsWasDisplay = true;
+    }
+    $(window).scroll(function () { 
+        const offsetTop = window.scrollY;
+        if(offsetTop > 1){
+            startServiceCardAnimation();
+        }
     });
 
     $(navBtns).click(function(e) {
