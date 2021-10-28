@@ -22,6 +22,7 @@
 body {
     background: var(--main-bg-color);
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 .container {
     max-width: 1080px;
@@ -294,6 +295,25 @@ hr {
     height: 40px;
     width: 40px;
     border-radius: 100px;
+}
+.nav-btns {
+    position: fixed;
+    top: 45%;
+    right: 10px;
+}
+.nav__btn {
+    height: 15px;
+    width: 15px;
+    border-radius: 100px;
+    border: 1px rgb(114, 114, 114) solid;
+    margin: 10px 0;
+}
+.nav__btn:hover {
+    box-shadow: 0 0px 8px 0 rgba(99, 63, 230, 0.671);
+}
+.nav__btn_active {
+    background-color: #358861;
+    border-radius: 5px;
 }
 
 
