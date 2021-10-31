@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Styles/style.css">
+    <link rel="stylesheet" href="/Styles/reset-base-styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrapper">
+        <main id="main" class="b-files-share">
+            <div class="container">
+                <div class="main__body">
+                    <h1 class="title title_large title_dark">Files Sharer Service</h1>
+                    <h3 class="subtitle subtitle_dark">Let's shoose and upload your files!</h3>
+                    <div class="b-upload-data">
+                        <input class="upload-data-input" type="file" multiple>
+                        <!-- <label for="file" class="custom-upload">Choose a file</label> -->
+                    </div>
+                    <div class="b-preview" hidden>
+                        <fieldset class="group-box group-box_dark group-box_top">
+                            <legend>Preview files</legend>
+                            <div class="files-preview">
+                            </div>
+                        </fieldset>
+                        
+                        <fieldset class="group-box group-box_dark group-box_top">
+                            <legend>Attached Data Info</legend>
+                            <h3 class="text text_dark total-size">Totle Size: <span class="text text_dark total-size__value"></span></h3>
+                            <h3 class="text text_dark files-amout">Files Amount: <span class="text text_dark files-amout__value"></span> </h3>
+                            <input class="btn btn_purple files-submit-btn" type="submit" value="Upload on Server">
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/JQuery/jquery-3.6.0.min.js"></script>
+    <script src="/JS/upload-data-script.js"></script>
+</body>
+</html>
