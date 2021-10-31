@@ -28,6 +28,11 @@ function setNavBtnActive(button){
 function setNavBtnActiveByIndex(index){
     setNavBtnActive(navBtns[index]);
 }
+function navigateToBlock(mainBlockIndex){
+    const positY = $(mainBlocks[mainBlockIndex]).offset().top;
+    setNavBtnActive(navBtns[mainBlockIndex]);
+    window.scroll({top: positY, left: 0, behavior: 'smooth' });
+}
 
 $(document).ready(function () {
     siteStartPosition();
@@ -60,9 +65,12 @@ $(document).ready(function () {
         }
         serviceCardsWasDisplay = true;
     }
+
+
+    let currentTopLocation = 0;
     $(window).scroll(function () { 
-        const offsetTop = window.scrollY;
-        if(offsetTop > 1){
+        currentTopLocation = window.scrollY;
+        if(currentTopLocation > 100){
             startServiceCardAnimation();
         }
     });
@@ -71,10 +79,6 @@ $(document).ready(function () {
         e.preventDefault();
 
         const btnIndex = $(this).index();
-        const positY = $(mainBlocks[btnIndex]).offset().top;
-        setNavBtnActive(this);
-
-        window.scroll({top: positY, left: 0, behavior: 'smooth' });
+        navigateToBlock(btnIndex);
     });
-    
 });
