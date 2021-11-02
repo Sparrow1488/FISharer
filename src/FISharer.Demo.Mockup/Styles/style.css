@@ -4,6 +4,7 @@
     --white-color: #fff;
     --dark-color: #000;
     --base-white-color: #fff;
+    --success-color: rgb(35, 168, 35);
 
     --large-font-size: 42px;
     --middle-font-size: 38px;
@@ -38,6 +39,15 @@ hr {
     height: 1px;
     margin: 2px 0px;
 }
+.textbox {
+    border-radius: 5px;
+    padding: 2px 5px;
+    margin: 10px 0px;
+    font-size: var(--default-font-size);
+}
+.textbox_dark {
+    background-color: #383838;
+}
 .group-box {
     padding: 5px;
     border-radius: 2px;
@@ -67,6 +77,9 @@ hr {
 }
 .title_dark {
     color: var(--dark-color);
+}
+.title_green {
+    color: var(--success-color);
 }
 .title_small {
     font-weight: 400;
@@ -119,6 +132,11 @@ hr {
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.055), 0 17px 50px 0 rgba(0, 0, 0, 0.007);
     cursor: pointer;
 }
+
+.btn_dark {
+    background-color: #303030;
+    color: var(--white-color);
+}
 .btn_blue {
     transition: var(--btn-animate-transition);
     color: var(--white-color);
@@ -142,6 +160,9 @@ hr {
     position: relative;
     bottom: 3px;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.btn_static:hover {
+    position: inherit;
 }
 .btn_large {
     padding: 10px 15px;
@@ -396,6 +417,20 @@ body {
 }
 .files-submit-btn {
     width: 100%;
+}
+
+
+.b-download-token {
+    display: flex;
+    align-items: center;
+}
+.b-download-token .copy-link-btn {
+    line-height: 21px;
+    margin: 0px;
+    border-radius: 0px;
+}
+.b-download-token .token-output {
+    border-radius: 0px;
 }
 
 

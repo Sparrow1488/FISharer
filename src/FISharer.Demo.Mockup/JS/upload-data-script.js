@@ -52,4 +52,16 @@ $(document).ready(function () {
             $(".total-size__value").html(`${bytesToSize(filesFullSize)}`);
         }
     }
+
+    $(".files-submit-btn").click(function(e){
+        e.preventDefault();
+        $(".b-upload").slideUp();
+        $(".b-success").slideDown();
+    });
+
+    $(".copy-link-btn").click(function(e){
+        e.preventDefault();
+        $(this).html("Copied✅");
+        $(".back-page-btn").show();
+    });
 });
