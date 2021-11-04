@@ -349,3 +349,4 @@ C:\Users\Александр\Desktop\Repsitories\FISharer\src\FISharer\FISharer\o
 C:\Users\Александр\Desktop\Repsitories\FISharer\src\FISharer\FISharer\obj\Debug\netcoreapp3.1\FISharer.dll
 C:\Users\Александр\Desktop\Repsitories\FISharer\src\FISharer\FISharer\obj\Debug\netcoreapp3.1\FISharer.pdb
 C:\Users\Александр\Desktop\Repsitories\FISharer\src\FISharer\FISharer\obj\Debug\netcoreapp3.1\FISharer.genruntimeconfig.cache
+C:\Users\Александр\Desktop\Repsitories\FISharer\src\FISharer\FISharer\obj\Debug\netcoreapp3.1\Razor\Views\FilesShare\Index.cshtml.g.cs

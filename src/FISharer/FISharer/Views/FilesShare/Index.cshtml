@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Share Files";
+}
+
+<main id="main" class="b-files-share">
+    <div class="b-upload">
+        <div class="container">
+            <div class="main__body">
+                <h1 class="title title_large title_dark">Files Sharer Service</h1>
+                <h3 class="subtitle subtitle_dark">Let's shoose and upload your files!</h3>
+                <div class="b-upload-data">
+                    <input class="upload-data-input" type="file" multiple>
+                    <!-- <label for="file" class="custom-upload">Choose a file</label> -->
+                </div>
+                <div class="b-preview" hidden>
+                    <fieldset class="group-box group-box_dark group-box_top">
+                        <legend>Preview files</legend>
+                        <div class="files-preview">
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="group-box group-box_dark group-box_top">
+                        <legend>Attached Data Info</legend>
+                        <h3 class="text text_dark total-size">Totle Size: <span class="text text_dark total-size__value"></span></h3>
+                        <h3 class="text text_dark files-amout">Files Amount: <span class="text text_dark files-amout__value"></span> </h3>
+                        <input class="btn btn_purple files-submit-btn" type="submit" value="Upload on Server">
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="b-success" hidden>
+        <div class="container">
+            <h3 class="title title_small title_dark title_green">Files Uploaded Success!</h3>
+            <div class="b-download-token">
+                <input type="text" class="textbox text_small textbox_dark token-output" value="//d-token-1488-228-secretWord%20iNeedPizza" disabled>
+                <a href="#" class="btn btn_dark btn_static text_small copy-link-btn">Copy</a>
+            </div>
+            <a asp-controller="Home" asp-action="Index" class="btn btn_purple back-page-btn text_small" hidden>← Back to Home Page</a>
+        </div>
+    </div>
+</main>
+
+<script src="/JQuery/jquery-3.6.0.min.js"></script>
+<script src="/JS/upload-data-script.js"></script>
