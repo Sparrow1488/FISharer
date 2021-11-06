@@ -8,24 +8,26 @@
             <div class="main__body">
                 <h1 class="title title_large title_dark">Files Sharer Service</h1>
                 <h3 class="subtitle subtitle_dark">Let's shoose and upload your files!</h3>
-                <div class="b-upload-data">
-                    <input class="upload-data-input" type="file" multiple>
-                    <!-- <label for="file" class="custom-upload">Choose a file</label> -->
-                </div>
-                <div class="b-preview" hidden>
-                    <fieldset class="group-box group-box_dark group-box_top">
-                        <legend>Preview files</legend>
-                        <div class="files-preview">
-                        </div>
-                    </fieldset>
+                <form asp-action="UploadFiles" asp-controller="FilesShare" enctype="multipart/form-data" method="post">
+                    <div class="b-upload-data">
+                        <input name="files" class="upload-data-input" type="file" multiple>
+                        <!-- <label for="file" class="custom-upload">Choose a file</label> -->
+                    </div>
+                    <div class="b-preview" hidden>
+                        <fieldset class="group-box group-box_dark group-box_top">
+                            <legend>Preview files</legend>
+                            <div class="files-preview">
+                            </div>
+                        </fieldset>
 
-                    <fieldset class="group-box group-box_dark group-box_top">
-                        <legend>Attached Data Info</legend>
-                        <h3 class="text text_dark total-size">Totle Size: <span class="text text_dark total-size__value"></span></h3>
-                        <h3 class="text text_dark files-amout">Files Amount: <span class="text text_dark files-amout__value"></span> </h3>
-                        <input class="btn btn_purple files-submit-btn" type="submit" value="Upload on Server">
-                    </fieldset>
-                </div>
+                        <fieldset class="group-box group-box_dark group-box_top">
+                            <legend>Attached Data Info</legend>
+                            <h3 class="text text_dark total-size">Totle Size: <span class="text text_dark total-size__value"></span></h3>
+                            <h3 class="text text_dark files-amout">Files Amount: <span class="text text_dark files-amout__value"></span> </h3>
+                            <input class="btn btn_purple files-submit-btn" type="submit" value="Upload on Server">
+                        </fieldset>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

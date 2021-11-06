@@ -54,7 +54,7 @@ $(document).ready(function () {
     }
 
     $(".files-submit-btn").click(function(e){
-        e.preventDefault();
+        //e.preventDefault();
         $(".b-upload").slideUp();
         $(".b-success").slideDown();
     });
