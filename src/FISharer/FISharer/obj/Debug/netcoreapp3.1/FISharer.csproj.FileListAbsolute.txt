@@ -701,3 +701,4 @@ C:\Users\Dom\Desktop\Репозитории\FISharer\src\FISharer\FISharer\obj\D
 C:\Users\Dom\Desktop\Репозитории\FISharer\src\FISharer\FISharer\obj\Debug\netcoreapp3.1\FISharer.dll
 C:\Users\Dom\Desktop\Репозитории\FISharer\src\FISharer\FISharer\obj\Debug\netcoreapp3.1\FISharer.pdb
 C:\Users\Dom\Desktop\Репозитории\FISharer\src\FISharer\FISharer\obj\Debug\netcoreapp3.1\FISharer.genruntimeconfig.cache
+C:\Users\Dom\Desktop\Репозитории\FISharer\src\FISharer\FISharer\bin\Debug\netcoreapp3.1\web.config

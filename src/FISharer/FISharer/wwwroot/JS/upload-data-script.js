@@ -53,15 +53,38 @@ $(document).ready(function () {
         }
     }
 
-    $(".files-submit-btn").click(function(e){
-        //e.preventDefault();
-        $(".b-upload").slideUp();
-        $(".b-success").slideDown();
+    $(".files-submit-btn").click(async function(e){
+        e.preventDefault();
+
+        let inputFiles = document.querySelector(".upload-data-input");
+        console.log(inputFiles.files);
+        let formData = new FormData();
+        for (var i = 0; i < inputFiles.files.length; i++) {
+            formData.append("files", inputFiles.files[i]);
+        }
+        let response = await (await fetch('/FilesShare/UploadFiles', { method: "POST", body: formData })).json();
+        console.log("Response", response);
+        if (response.success) {
+            $(".token-output").val(response.token);
+            $(".b-upload").slideUp();
+            $(".b-success").slideDown();
+        }
+        else alert(response.message);
     });
 
     $(".copy-link-btn").click(function(e){
         e.preventDefault();
+        navigator.clipboard.writeText($(".token-output").val());
         $(this).html("Copied✅");
         $(".back-page-btn").show();
+    });
+
+    const copyBtn = document.querySelector(".copy-link-btn");
+    copyBtn.addEventListener("copy", function (e) {
+        e.preventDefault();
+        if (e.clipboardData) {
+            e.clipboardData.setData("text/plain", span.textContent);
+            console.log(event.clipboardData.getData("text"))
+        }
     });
 });
