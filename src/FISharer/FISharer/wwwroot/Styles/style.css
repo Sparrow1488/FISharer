@@ -5,13 +5,13 @@
     --dark-color: #000;
     --base-white-color: #fff;
     --success-color: rgb(35, 168, 35);
+    --danger-color: #B92D2D;
 
     --large-font-size: 42px;
     --middle-font-size: 38px;
     --small-font-size: 20px;
     --default-font-size: 18px;
     --tiny-font-size: 15px;
-
     --btn-animate-transition: 0.5s;
 }
 * {
@@ -100,6 +100,9 @@ hr {
 }
 .text_dark {
     color: var(--dark-color);
+}
+.text_danger {
+    color: var(--danger-color);
 }
 .text_small {
     font-size: var(--tiny-font-size);
