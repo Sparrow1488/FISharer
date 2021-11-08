@@ -10,7 +10,14 @@ function bytesToSize(bytes) {
         resString = fileName.substring(0,20) + "...";
     }
     return resString;
- }
+}
+function displayValidationError(message) {
+    $(".b-validation .validation__text").text(message);
+    $(".b-validation").slideDown("slow");
+}
+function hideValidationError() {
+    $(".b-validation").slideUp("slow");
+}
 
 $(document).ready(function () {
     let filesCount = 0;
@@ -55,21 +62,27 @@ $(document).ready(function () {
 
     $(".files-submit-btn").click(async function(e){
         e.preventDefault();
+        hideValidationError();
 
         let inputFiles = document.querySelector(".upload-data-input");
         console.log(inputFiles.files);
-        let formData = new FormData();
-        for (var i = 0; i < inputFiles.files.length; i++) {
-            formData.append("files", inputFiles.files[i]);
+        if (inputFiles.files.length > 0) {
+            let formData = new FormData();
+            for (var i = 0; i < inputFiles.files.length; i++) {
+                formData.append("files", inputFiles.files[i]);
+            }
+            let response = await (await fetch('/FilesShare/UploadFiles', { method: "POST", body: formData })).json();
+            console.log("Response", response);
+            if (response.success) {
+                $(".token-output").val(response.token);
+                $(".b-upload").slideUp();
+                $(".b-success").slideDown();
+            }
+            else displayValidationError(response.message);
         }
-        let response = await (await fetch('/FilesShare/UploadFiles', { method: "POST", body: formData })).json();
-        console.log("Response", response);
-        if (response.success) {
-            $(".token-output").val(response.token);
-            $(".b-upload").slideUp();
-            $(".b-success").slideDown();
+        else {
+            displayValidationError("Select any files from your local storage to upload to the server");
         }
-        else alert(response.message);
     });
 
     $(".copy-link-btn").click(function(e){

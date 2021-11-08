@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace FISharer.Controllers
 {
     
-    public class FilesShare : Controller
+    public class FilesShareController : Controller
     {
         private const long BYTES_SIZE_OF_100_MB = 104857600;
         public IActionResult Index()

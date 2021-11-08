@@ -40,6 +40,7 @@ hr {
     margin: 2px 0px;
 }
 .textbox {
+    max-width: 100%;
     border-radius: 5px;
     padding: 2px 5px;
     margin: 10px 0px;
