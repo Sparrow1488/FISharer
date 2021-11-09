@@ -1055,3 +1055,4 @@ C:\Users\aleks\OneDrive\Desktop\Илья\Repositories\FISharer\src\FISharer\FISh
 C:\Users\aleks\OneDrive\Desktop\Илья\Repositories\FISharer\src\FISharer\FISharer\obj\Debug\netcoreapp3.1\FISharer.dll
 C:\Users\aleks\OneDrive\Desktop\Илья\Repositories\FISharer\src\FISharer\FISharer\obj\Debug\netcoreapp3.1\FISharer.pdb
 C:\Users\aleks\OneDrive\Desktop\Илья\Repositories\FISharer\src\FISharer\FISharer\obj\Debug\netcoreapp3.1\FISharer.genruntimeconfig.cache
+C:\Users\Александр\Desktop\Repsitories\FISharer\src\FISharer\FISharer\bin\Debug\netcoreapp3.1\web.config

@@ -29,35 +29,35 @@ namespace FISharer.Controllers
                 files.ForEach(file => summaryLenght += file.Length);
                 if (summaryLenght < BYTES_SIZE_OF_100_MB && summaryLenght > 0)
                 {
-                    files.ForEach(file => LocalWriteStreamData(file));
+                    var dataPath = SaveDataLocalRange(files);
+                    CompressDirectory(dataPath);
                     result = Json(new UploadedFilesViewModel(true, "TOKEN-1488-1337", "Uploaded success"));
                 }
                 else result = Json(new UploadedFilesViewModel(false, null, "Your status does not allow to upload more than 100MB"));
             }
             return result;
         }
-        private void LocalWriteStreamData(IFormFile file)
+
+        private string SaveDataLocalRange(IEnumerable<IFormFile> files)
         {
-            using var memoryStream = new MemoryStream();
-            file.CopyTo(memoryStream);
-            using var archive = new ZipArchive(memoryStream, ZipArchiveMode.Create);
-            var entry = archive.CreateEntry(file.Name + ".txt");
-            var streamWriter = new StreamWriter(entry.Open());
-            streamWriter.Write("BOOBA!!!");
-            archive.ExtractToDirectory("C:/Users/aleks/Downloads/myZip.zip", true);
-
-
-            //using var memoryStream = new MemoryStream();
-            //file.CopyTo(memoryStream);
-            //using var zip = new ZipArchive(memoryStream, ZipArchiveMode.Create);
-            //var entry = zip.CreateEntry(file.FileName);
-            //var bytes = memoryStream.ToArray();
-            //using var zipWriter = entry.Open();
-            //await zipWriter.WriteAsync(bytes, 0, bytes.Length);
-
-            //var compressedBytes = memoryStream.ToArray();
-            //using var fs = new FileStream("C:/Users/aleks/Downloads/myZip.zip", FileMode.Create);
-            //await fs.WriteAsync(compressedBytes, 0, compressedBytes.Length);
+            string dirPath = Path.GetFullPath("./transient-data");
+            if(!Directory.Exists(dirPath))
+                Directory.CreateDirectory(dirPath);
+            foreach (var file in files)
+            {
+                using var bufferStream = new MemoryStream();
+                file.CopyTo(bufferStream);
+                var fileBytes = bufferStream.ToArray();
+                System.IO.File.WriteAllBytes(Path.Combine(dirPath, file.FileName), fileBytes);
+            }
+            return dirPath;
         }
+
+        private void CompressDirectory(string dirPath)
+        {
+            var root = Path.GetDirectoryName(dirPath);
+            ZipFile.CreateFromDirectory(dirPath, Path.Combine(root, "compressed.zip"));
+        }
+
     }
 }
