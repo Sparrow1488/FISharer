@@ -6,12 +6,12 @@ namespace FISharer.Services
 {
     public class FilesStorageService : IFilesStorageService
     {
-        //private readonly FilesDbContext _db;
+        private readonly FilesDbContext _db;
 
-        //public FilesStorageService(FilesDbContext db)
-        //{
-        //    _db = db;
-        //}
+        public FilesStorageService(FilesDbContext db)
+        {
+            _db = db;
+        }
 
         public string Add(byte[] data)
         {
