@@ -1,24 +1,31 @@
-﻿using FISharer.ViewModels;
+﻿using FISharer.Data;
+using FISharer.Entities;
+using FISharer.Services.Interfaces;
+using FISharer.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
+using System.Threading.Tasks;
 
 namespace FISharer.Controllers
 {
     
     public class FilesShareController : Controller
     {
-        public FilesShareController()
+        public FilesShareController(IClientsStorageService storage)
         {
-
+            _storage = storage;
         }
 
         private const long BYTES_SIZE_OF_100_MB = 104857600;
-        
-        public IActionResult Index()
+        private readonly IClientsStorageService _storage;
+
+        public async Task<IActionResult> Index()
         {
+            await _storage.CreateAsync(new Client() { Name = "Test", Password = "1234" });
+            var all = _storage.GetAll();
             return View();
         }
 
