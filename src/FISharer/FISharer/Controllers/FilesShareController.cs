@@ -10,7 +10,13 @@ namespace FISharer.Controllers
     
     public class FilesShareController : Controller
     {
+        public FilesShareController()
+        {
+
+        }
+
         private const long BYTES_SIZE_OF_100_MB = 104857600;
+        
         public IActionResult Index()
         {
             return View();

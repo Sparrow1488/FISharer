@@ -1,3 +1,6 @@
+using FISharer.Data;
+using FISharer.Services;
+using FISharer.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -18,6 +21,8 @@ namespace FISharer
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddSingleton<FilesDbContext>();
+            services.AddSingleton<IFilesStorageService, FilesStorageService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
