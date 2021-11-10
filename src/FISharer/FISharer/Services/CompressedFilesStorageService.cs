@@ -9,18 +9,15 @@ using System.Threading.Tasks;
 
 namespace FISharer.Services
 {
-    public class FilesStorageService : IFilesStorageService
+    public class CompressedFilesStorageService : ICompressedFilesStorageService
     {
         private readonly FilesDbContext _db;
+        private readonly ICompressionService _compressor;
 
-        public FilesStorageService(FilesDbContext db)
+        public CompressedFilesStorageService(FilesDbContext db, ICompressionService compressor)
         {
             _db = db;
-        }
-
-        public Task<string> AddAsync(IEnumerable<IFormFile> formFiles)
-        {
-            throw new NotImplementedException();
+            _compressor = compressor;
         }
 
         public async Task<string> AddAsync(byte[] data)
@@ -29,6 +26,18 @@ namespace FISharer.Services
             var file = new ClientData() { CompressedData = data, CreateTime = DateTime.Now, Token = token };
             await _db.Files.AddAsync(file);
             await _db.SaveChangesAsync();
+            return token;
+        }
+
+        public async Task<string> AddAsync(IEnumerable<IFormFile> formFiles)
+        {
+            return await AddUseCompressAsync(formFiles);
+        }
+
+        public async Task<string> AddUseCompressAsync(IEnumerable<IFormFile> files)
+        {
+            var compressedData = _compressor.Compress(files);
+            var token = await AddAsync(compressedData);
             return token;
         }
 

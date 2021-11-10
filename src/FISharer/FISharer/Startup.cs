@@ -26,7 +26,8 @@ namespace FISharer
             services.AddDbContext<FilesDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<IClientsStorageService, ClientsStorageService>();
-            services.AddScoped<IFilesStorageService, FilesStorageService>();
+            services.AddScoped<ICompressionService, ZipCompressionService>();
+            services.AddScoped<IFilesStorageService, CompressedFilesStorageService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
