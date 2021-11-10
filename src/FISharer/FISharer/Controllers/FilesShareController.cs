@@ -1,9 +1,8 @@
-﻿using FISharer.Data;
-using FISharer.Entities;
-using FISharer.Services.Interfaces;
+﻿using FISharer.Services.Interfaces;
 using FISharer.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
@@ -11,29 +10,27 @@ using System.Threading.Tasks;
 
 namespace FISharer.Controllers
 {
-    
+
     public class FilesShareController : Controller
     {
-        public FilesShareController(IClientsStorageService storage)
+        public FilesShareController(IFilesStorageService storage)
         {
             _storage = storage;
         }
 
         private const long BYTES_SIZE_OF_100_MB = 104857600;
-        private readonly IClientsStorageService _storage;
+        private readonly IFilesStorageService _storage;
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            await _storage.CreateAsync(new Client() { Name = "Test", Password = "1234" });
-            var all = _storage.GetAll();
             return View();
         }
 
         [DisableRequestSizeLimit]
         [HttpPost]
-        public IActionResult UploadFiles(List<IFormFile> files)
+        public async Task<IActionResult> UploadFiles(List<IFormFile> files)
         {
-            IActionResult result = Json(new UploadedFilesViewModel(false, null, "Files data equals null or empty"));
+            IActionResult result = Json(new UploadedFilesViewModel(false, string.Empty, "Files data equals null or empty"));
             long summaryLenght = 0;
             if (files != null && files.Count > 0)
             {
@@ -41,17 +38,19 @@ namespace FISharer.Controllers
                 if (summaryLenght < BYTES_SIZE_OF_100_MB && summaryLenght > 0)
                 {
                     var dataPath = SaveDataLocalRange(files);
-                    CompressDirectory(dataPath);
-                    result = Json(new UploadedFilesViewModel(true, "TOKEN-1488-1337", "Uploaded success"));
+                    var compressedData = CompressDirectoryToBytes(dataPath);
+                    var token = await _storage.AddAsync(compressedData);
+
+                    result = Json(new UploadedFilesViewModel(true, token, "Uploaded success"));
                 }
-                else result = Json(new UploadedFilesViewModel(false, null, "Your status does not allow to upload more than 100MB"));
+                else result = Json(new UploadedFilesViewModel(false, string.Empty, "Your status does not allow to upload more than 100MB"));
             }
             return result;
         }
 
         private string SaveDataLocalRange(IEnumerable<IFormFile> files)
         {
-            string dirPath = Path.GetFullPath("./transient-data");
+            string dirPath = Path.GetFullPath("./transient-data-" + new Random().Next(12300, 999999999));
             if(!Directory.Exists(dirPath))
                 Directory.CreateDirectory(dirPath);
             foreach (var file in files)
@@ -64,10 +63,17 @@ namespace FISharer.Controllers
             return dirPath;
         }
 
-        private void CompressDirectory(string dirPath)
+        private byte[] CompressDirectoryToBytes(string dirPath)
         {
             var root = Path.GetDirectoryName(dirPath);
-            ZipFile.CreateFromDirectory(dirPath, Path.Combine(root, "compressed.zip"));
+            var zipPath = Path.Combine(root, "compressed-" + new Random().Next(199999, 99999999) + ".zip");
+            ZipFile.CreateFromDirectory(dirPath, zipPath);
+            var data = System.IO.File.ReadAllBytes(zipPath);
+
+            Directory.Delete(dirPath, true);
+            System.IO.File.Delete(zipPath);
+
+            return data;
         }
 
     }

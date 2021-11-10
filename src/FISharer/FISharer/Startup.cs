@@ -23,6 +23,7 @@ namespace FISharer
         {
             services.AddControllersWithViews();
             services.AddDbContext<ClientsDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<FilesDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<IClientsStorageService, ClientsStorageService>();
             services.AddScoped<IFilesStorageService, FilesStorageService>();

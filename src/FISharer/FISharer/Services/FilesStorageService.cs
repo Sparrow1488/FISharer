@@ -1,6 +1,8 @@
 ﻿using FISharer.Data;
+using FISharer.Entities;
 using FISharer.Services.Interfaces;
 using System;
+using System.Threading.Tasks;
 
 namespace FISharer.Services
 {
@@ -13,12 +15,26 @@ namespace FISharer.Services
             _db = db;
         }
 
-        public string Add(byte[] data)
+        public byte[] Get(string token)
         {
             throw new NotImplementedException();
         }
 
-        public byte[] Get(string token)
+        public async Task<string> AddAsync(byte[] data)
+        {
+            string token = GenerateToken();
+            var file = new ClientData() { CompressedData = data, CreateTime = DateTime.Now, Token = token };
+            await _db.Files.AddAsync(file);
+            await _db.SaveChangesAsync();
+            return token;
+        }
+
+        private string GenerateToken()
+        {
+            return Convert.ToBase64String(Guid.NewGuid().ToByteArray());
+        }
+
+        public Task<byte[]> GetAsync(string token)
         {
             throw new NotImplementedException();
         }
