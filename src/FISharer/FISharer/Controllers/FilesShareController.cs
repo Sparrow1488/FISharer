@@ -30,7 +30,7 @@ namespace FISharer.Controllers
 
         [DisableRequestSizeLimit]
         [HttpPost]
-        public async Task<IActionResult> UploadFiles(List<IFormFile> files)
+        public async Task<IActionResult> UploadFilesAsync(List<IFormFile> files)
         {
             IActionResult result = Json(new UploadedFilesViewModel(false, string.Empty, "Files data equals null or empty"));
             long summaryLenght = 0;
@@ -45,6 +45,13 @@ namespace FISharer.Controllers
                 else result = Json(new UploadedFilesViewModel(false, string.Empty, "Your status does not allow to upload more than 100MB"));
             }
             return result;
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> GetFilesInfoAsync(string token)
+        {
+            IActionResult response = Json(new { status = token });
+            return response;
         }
 
     }

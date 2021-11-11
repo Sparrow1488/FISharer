@@ -436,9 +436,12 @@ body {
     border-radius: 0px;
 }
 
-.b-paste-token {
+.b-paste-token__row {
     display: flex;
     align-items: center;
+}
+.b-paste-token__btn .btn {
+    width: 100%;
 }
 
 .paste-token-textbox {
