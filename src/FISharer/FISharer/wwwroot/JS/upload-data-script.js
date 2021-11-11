@@ -97,7 +97,7 @@ $(document).ready(function () {
         e.preventDefault();
         if (e.clipboardData) {
             e.clipboardData.setData("text/plain", span.textContent);
-            console.log(event.clipboardData.getData("text"))
+            console.log(e.clipboardData.getData("text"))
         }
     });
 });

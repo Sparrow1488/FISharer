@@ -2,7 +2,6 @@
     ViewData["Title"] = "Home Page";
 }
 
-
 <div class="up-btn"><a><img src="/Img/up-icon.png" alt=""></a></div>
 <div class="nav-btns">
     <div href="#" class="nav__btn nav__btn_active"></div>
@@ -34,7 +33,7 @@
                 <hr>
                 <ul>
                     <li><a asp-controller="FilesShare" asp-action="Index" class="link menu__item">Share Files</a></li>
-                    <li><a href="#" class="link menu__item">Download File</a></li>
+                    <li><a asp-controller="FilesShare" asp-action="Download" class="link menu__item">Download File</a></li>
                     <li><a href="#" class="link menu__item">Files Storage</a></li>
                 </ul>
             </div>
@@ -71,7 +70,7 @@
                 </div>
                 <div class="b-buttons">
                     <a asp-controller="FilesShare" asp-action="Index" class="share-btn btn btn_large btn_blue"> <img class="btn__icon" src="/Img/share-icon-1.png" alt="Share-icon"> Share Quickly </a>
-                    <a href="#" class="share-btn btn btn_large btn_purple"> <img class="btn__icon" src="/Img/download-icon-1.png" alt="Downlaod-icon"> Fast Download </a>
+                    <a asp-controller="FilesShare" asp-action="Download" class="share-btn btn btn_large btn_purple"> <img class="btn__icon" src="/Img/download-icon-1.png" alt="Downlaod-icon"> Fast Download </a>
                 </div>
             </div>
         </div>

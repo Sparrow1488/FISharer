@@ -436,6 +436,20 @@ body {
     border-radius: 0px;
 }
 
+.b-paste-token {
+    display: flex;
+    align-items: center;
+}
+
+.paste-token-textbox {
+    border-radius: 0px;
+}
+.paste-token-btn {
+    line-height: 25px;
+    margin: 0px;
+    border-radius: 0px;
+}
+
 
 .footer {
     height: 100vh;

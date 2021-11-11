@@ -434,6 +434,22 @@ body {
     border-radius: 0px;
 }
 
+.b-paste-token {
+    display: flex;
+    align-items: center;
+}
+.paste-token-load {
+    border-radius: 0px;
+}
+.paste-token-btn {
+    line-height: 25px;
+    margin: 0px;
+    border-radius: 0px;
+}
+.token-textbox-load {
+    width: 100%;
+}
+
 
 .footer {
     height: 100vh;

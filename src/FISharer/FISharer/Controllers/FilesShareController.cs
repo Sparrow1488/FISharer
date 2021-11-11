@@ -23,6 +23,11 @@ namespace FISharer.Controllers
             return View();
         }
 
+        public IActionResult Download()
+        {
+            return View();
+        }
+
         [DisableRequestSizeLimit]
         [HttpPost]
         public async Task<IActionResult> UploadFiles(List<IFormFile> files)
