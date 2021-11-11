@@ -4,14 +4,16 @@ using FISharer.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FISharer.Migrations.FilesDb
 {
     [DbContext(typeof(FilesDbContext))]
-    partial class FilesDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211111190220_CreateDataInfos")]
+    partial class CreateDataInfos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -20,10 +20,11 @@ namespace FISharer.Services
             _compressor = compressor;
         }
 
-        public async Task<string> AddAsync(byte[] data)
+        public async Task<string> AddAsync(byte[] data, IEnumerable<DataInfo> filesInfo)
         {
             string token = GenerateToken();
             var file = new ClientData() { CompressedData = data, CreateTime = DateTime.Now, Token = token };
+            file.FilesInfo = filesInfo;
             await _db.Files.AddAsync(file);
             await _db.SaveChangesAsync();
             return token;
@@ -37,8 +38,22 @@ namespace FISharer.Services
         public async Task<string> AddUseCompressAsync(IEnumerable<IFormFile> files)
         {
             var compressedData = _compressor.Compress(files);
-            var token = await AddAsync(compressedData);
+            var filesInfos = GetDataInfos(files);
+            var token = await AddAsync(compressedData, filesInfos);
             return token;
+        }
+
+        private IEnumerable<DataInfo> GetDataInfos(IEnumerable<IFormFile> files)
+        {
+            var listInfos = new List<DataInfo>();
+            foreach (var file in files)
+            {
+                var info = new DataInfo();
+                info.Name = file.FileName;
+                info.Size = file.Length;
+                listInfos.Add(info);
+            }
+            return listInfos;
         }
 
         private string GenerateToken()

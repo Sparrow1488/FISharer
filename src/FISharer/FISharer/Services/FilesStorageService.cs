@@ -23,10 +23,11 @@ namespace FISharer.Services
             throw new NotImplementedException();
         }
 
-        public async Task<string> AddAsync(byte[] data)
+        public async Task<string> AddAsync(byte[] data, IEnumerable<DataInfo> filesInfo)
         {
             string token = GenerateToken();
             var file = new ClientData() { CompressedData = data, CreateTime = DateTime.Now, Token = token };
+            file.FilesInfo = filesInfo;
             await _db.Files.AddAsync(file);
             await _db.SaveChangesAsync();
             return token;
@@ -53,5 +54,6 @@ namespace FISharer.Services
             return emptyData;
         }
 
+        
     }
 }

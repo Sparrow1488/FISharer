@@ -7,7 +7,7 @@ namespace FISharer.Services.Interfaces
 {
     public interface IFilesStorageService
     {
-        Task<string> AddAsync(byte[] data);
+        Task<string> AddAsync(byte[] data, IEnumerable<DataInfo> dataInfos);
         Task<string> AddAsync(IEnumerable<IFormFile> formFiles);
         Task<ClientData> GetAsync(string token);
         ClientData Get(string token);

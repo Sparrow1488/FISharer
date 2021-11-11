@@ -8,5 +8,6 @@ namespace FISharer.Data
     {
         public FilesDbContext([NotNull] DbContextOptions options) : base(options) { }
         public DbSet<ClientData> Files { get; set; }
+        public DbSet<DataInfo> FilesInfos { get; set; }
     }
 }
