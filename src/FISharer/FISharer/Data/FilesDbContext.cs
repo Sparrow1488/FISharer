@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+using FISharer.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace FISharer.Data
 {
@@ -7,5 +8,7 @@ namespace FISharer.Data
         public FilesDbContext(DbContextOptions options) : base(options)
         {
         }
+        public DbSet<ClientData> Files { get; set; }
+        public DbSet<DataInfo> FilesInfos { get; set; }
     }
 }

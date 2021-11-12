@@ -1,66 +1,59 @@
-﻿using FISharer.ViewModels;
+﻿using FISharer.Models;
+using FISharer.Services.Interfaces;
+using FISharer.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.IO;
-using System.IO.Compression;
+using System.Threading.Tasks;
 
 namespace FISharer.Controllers
 {
-    
+
     public class FilesShareController : Controller
     {
-        public FilesShareController()
+        public FilesShareController(IFilesStorageService storage)
         {
-
+            _storage = storage;
         }
 
         private const long BYTES_SIZE_OF_100_MB = 104857600;
-        
+        private readonly IFilesStorageService _storage;
+
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Download()
         {
             return View();
         }
 
         [DisableRequestSizeLimit]
         [HttpPost]
-        public IActionResult UploadFiles(List<IFormFile> files)
+        public async Task<IActionResult> UploadFilesAsync(List<IFormFile> files)
         {
-            IActionResult result = Json(new UploadedFilesViewModel(false, null, "Files data equals null or empty"));
+            IActionResult result = Json(new UploadedFilesViewModel(false, string.Empty, "Files data equals null or empty"));
             long summaryLenght = 0;
             if (files != null && files.Count > 0)
             {
                 files.ForEach(file => summaryLenght += file.Length);
                 if (summaryLenght < BYTES_SIZE_OF_100_MB && summaryLenght > 0)
                 {
-                    var dataPath = SaveDataLocalRange(files);
-                    CompressDirectory(dataPath);
-                    result = Json(new UploadedFilesViewModel(true, "TOKEN-1488-1337", "Uploaded success"));
+                    var token = await _storage.AddAsync(files);
+                    result = Json(new UploadedFilesViewModel(true, token, "Uploaded success"));
                 }
-                else result = Json(new UploadedFilesViewModel(false, null, "Your status does not allow to upload more than 100MB"));
+                else result = Json(new UploadedFilesViewModel(false, string.Empty, "Your status does not allow to upload more than 100MB"));
             }
             return result;
         }
 
-        private string SaveDataLocalRange(IEnumerable<IFormFile> files)
+        [HttpPost]
+        public IActionResult GetFilesInfoAsync(TokenResponseViewModel tokenModel)
         {
-            string dirPath = Path.GetFullPath("./transient-data");
-            if(!Directory.Exists(dirPath))
-                Directory.CreateDirectory(dirPath);
-            foreach (var file in files)
-            {
-                using var bufferStream = new MemoryStream();
-                file.CopyTo(bufferStream);
-                var fileBytes = bufferStream.ToArray();
-                System.IO.File.WriteAllBytes(Path.Combine(dirPath, file.FileName), fileBytes);
-            }
-            return dirPath;
-        }
-
-        private void CompressDirectory(string dirPath)
-        {
-            var root = Path.GetDirectoryName(dirPath);
-            ZipFile.CreateFromDirectory(dirPath, Path.Combine(root, "compressed.zip"));
+            IActionResult response = Json(new { status = tokenModel.Token });
+            var infos = _storage.GetDataInfos(tokenModel.Token);
+            return response;
         }
 
     }
