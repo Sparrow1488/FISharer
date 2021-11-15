@@ -42,9 +42,8 @@ $(document).ready(function () {
         }
         else {
             $(".b-download-form").slideDown();
-            const formData = new FormData(document.querySelector(".download-archive-form"));
-            console.log(formData);
-            formData.set("token", $(".paste-token-textbox").val());
+            const token = $(".paste-token-textbox").val();
+            $(document.getElementsByName("token")).val(token);
         }
     });
 
