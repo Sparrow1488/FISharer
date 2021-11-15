@@ -77,5 +77,14 @@ namespace FISharer.Services
             return emptyData;
         }
 
+        public IEnumerable<DataInfo> GetDataInfos(string token)
+        {
+            var emptyInfo = new DataInfo();
+            var findArchive = _db.Files.Where(arch => arch.Token == token).FirstOrDefault();
+            IEnumerable<DataInfo> findInfos = _db.FilesInfos.Where(info => info.ArchiveData == findArchive).ToList();
+            foreach (var info in findInfos)
+                info.ArchiveData = null;
+            return findInfos ?? new List<DataInfo>();
+        }
     }
 }

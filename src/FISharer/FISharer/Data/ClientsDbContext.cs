@@ -6,7 +6,7 @@ namespace FISharer.Data
 {
     public class ClientsDbContext : DbContext
     {
-        public ClientsDbContext([NotNull] DbContextOptions options) : base(options) { }
+        public ClientsDbContext(DbContextOptions options) : base(options) { }
 
         public DbSet<Client> Clients { get; set; }
     }

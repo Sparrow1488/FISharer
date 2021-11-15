@@ -11,5 +11,6 @@ namespace FISharer.Services.Interfaces
         Task<string> AddAsync(IEnumerable<IFormFile> formFiles);
         Task<ClientData> GetAsync(string token);
         ClientData Get(string token);
+        IEnumerable<DataInfo> GetDataInfos(string token);
     }
 }

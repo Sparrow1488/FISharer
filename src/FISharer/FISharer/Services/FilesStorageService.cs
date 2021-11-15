@@ -54,6 +54,9 @@ namespace FISharer.Services
             return emptyData;
         }
 
-        
+        public IEnumerable<DataInfo> GetDataInfos(string token)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
