@@ -436,6 +436,38 @@ body {
     border-radius: 0px;
 }
 
+.b-paste-token__row {
+    display: flex;
+    align-items: center;
+}
+.b-paste-token__btn {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+.b-paste-token__btn .btn {
+    line-height: 28px;
+}
+
+.paste-token-textbox {
+    border-radius: 0px;
+}
+.paste-token-btn {
+    line-height: 25px;
+    width: 100%;
+    margin: 0px;
+    border-radius: 0px;
+}
+.download-archive-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.download-archive-form .btn {
+    line-height: 28px;
+}
+
 
 .footer {
     height: 100vh;

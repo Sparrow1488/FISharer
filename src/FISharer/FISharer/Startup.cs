@@ -1,5 +1,9 @@
+using FISharer.Data;
+using FISharer.Services;
+using FISharer.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -18,6 +22,12 @@ namespace FISharer
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<ClientsDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<FilesDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddScoped<IClientsStorageService, ClientsStorageService>();
+            services.AddScoped<ICompressionService, ZipCompressionService>();
+            services.AddScoped<IFilesStorageService, CompressedFilesStorageService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

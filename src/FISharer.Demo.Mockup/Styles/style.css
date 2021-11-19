@@ -40,6 +40,7 @@ hr {
     margin: 2px 0px;
 }
 .textbox {
+    max-width: 100%;
     border-radius: 5px;
     padding: 2px 5px;
     margin: 10px 0px;
@@ -431,6 +432,22 @@ body {
 }
 .b-download-token .token-output {
     border-radius: 0px;
+}
+
+.b-paste-token {
+    display: flex;
+    align-items: center;
+}
+.paste-token-load {
+    border-radius: 0px;
+}
+.paste-token-btn {
+    line-height: 25px;
+    margin: 0px;
+    border-radius: 0px;
+}
+.token-textbox-load {
+    width: 100%;
 }
 
 
