@@ -58,7 +58,7 @@ namespace FISharer.Controllers
                 response = Json(new { status = "OK", infos });
             return response;
         }
-        //  MwgysItS+E+4IxLb0aIseA==
+
         [HttpPost]
         public async Task<IActionResult> DownloadArchiveAsync(TokenResponseViewModel tokenModel)
         {
