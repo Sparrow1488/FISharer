@@ -28,10 +28,13 @@ namespace FISharer
             services.AddScoped<IClientsStorageService, ClientsStorageService>();
             services.AddScoped<ICompressionService, ZipCompressionService>();
             services.AddScoped<IFilesStorageService, CompressedFilesStorageService>();
+            services.AddScoped<IFilesCleaner, FilesCleaner>();
+            services.AddSingleton<IFilesCleanerScheduler, FilesCleanerScheduler>();
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IFilesCleanerScheduler scheduler)
         {
+            scheduler.StartAsync().GetAwaiter().GetResult();
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
             else {

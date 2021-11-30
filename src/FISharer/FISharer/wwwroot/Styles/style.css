@@ -282,7 +282,7 @@ hr {
 
 .about-site-container {
     height: 100vh;
-    background: url("/Img/main-bg-2-min.jpg") center center no-repeat;
+    background: url("/Img/main-bg-phone-3.jpg") center center no-repeat;
     background-size: cover;
 }
 .service-card {
@@ -310,7 +310,7 @@ hr {
 
 .subscriptions-container {
     height: 100vh;
-    background: url("/Img/main-bg-3-min.jpg") center center no-repeat;
+    background: url("/Img/main-bg-phone-1.png") center center no-repeat;
     background-size: cover;
 }
 .subscription-card {
@@ -440,8 +440,14 @@ body {
     display: flex;
     align-items: center;
 }
-.b-paste-token__btn .btn {
+.b-paste-token__btn {
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    text-align: center;
+}
+.b-paste-token__btn .btn {
+    line-height: 28px;
 }
 
 .paste-token-textbox {
@@ -449,13 +455,23 @@ body {
 }
 .paste-token-btn {
     line-height: 25px;
+    width: 100%;
     margin: 0px;
     border-radius: 0px;
+}
+.download-archive-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.download-archive-form .btn {
+    line-height: 28px;
 }
 
 
 .footer {
     height: 100vh;
+    background: url("/Img/main-bg-phone-2.png") center center no-repeat;
 }
 
 @keyframes prelaoder {
