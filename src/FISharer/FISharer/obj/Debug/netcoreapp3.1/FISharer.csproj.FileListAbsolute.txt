@@ -1149,3 +1149,7 @@ C:\Users\Dom\Desktop\Репозитории\FISharer\src\FISharer\FISharer\bin\D
 C:\Users\Dom\Desktop\Репозитории\FISharer\src\FISharer\FISharer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\Dom\Desktop\Репозитории\FISharer\src\FISharer\FISharer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Dom\Desktop\Репозитории\FISharer\src\FISharer\FISharer\obj\Debug\netcoreapp3.1\Razor\Views\FilesShare\Download.cshtml.g.cs
+C:\Users\aleks\OneDrive\Desktop\Илья\Repositories\FISharer\src\FISharer\FISharer\bin\Debug\netcoreapp3.1\Quartz.dll
+C:\Users\Dom\Desktop\Репозитории\FISharer\src\FISharer\FISharer\bin\Debug\netcoreapp3.1\Quartz.dll
+C:\Users\Dom\Desktop\Репозитории\FISharer\src\FISharer\FISharer\bin\Debug\netcoreapp3.1\Quartz.Extensions.DependencyInjection.dll
+C:\Users\Dom\Desktop\Репозитории\FISharer\src\FISharer\FISharer\bin\Debug\netcoreapp3.1\Quartz.Extensions.Hosting.dll

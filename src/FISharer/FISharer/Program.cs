@@ -1,5 +1,8 @@
+using FISharer.Services;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace FISharer
 {
@@ -7,14 +10,15 @@ namespace FISharer
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var host = CreateHostBuilder(args).Build();
+            host.Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
+                .ConfigureWebHostDefaults((config) =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    config.UseStartup<Startup>();
                 });
     }
 }

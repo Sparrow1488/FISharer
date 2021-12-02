@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "5r0HvtDhY+iyCWc6ATUrc3ba7hVkcoCyY1UP3u7kFrtte8ZlOCWSlV7TGa6N6pR8tkWJGrWK2/gjS7UrCHmW7Q==",
+  "dgSpecHash": "GdhqemkHh3am2bb2xarRiFmp6YLU5t7+YKrK9mXlO0HW/KyUwk/VpO8vQD29mIQOQSTBW7URT1H3lTdZD/qvhQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Dom\\Desktop\\Репозитории\\FISharer\\src\\FISharer\\FISharer\\FISharer.csproj",
   "expectedPackageFiles": [
@@ -28,6 +28,8 @@
     "C:\\Users\\Dom\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.2\\microsoft.extensions.dependencyinjection.5.0.2.nupkg.sha512",
     "C:\\Users\\Dom\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Dom\\.nuget\\packages\\microsoft.extensions.dependencymodel\\3.1.6\\microsoft.extensions.dependencymodel.3.1.6.nupkg.sha512",
+    "C:\\Users\\Dom\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\2.1.1\\microsoft.extensions.fileproviders.abstractions.2.1.1.nupkg.sha512",
+    "C:\\Users\\Dom\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\2.1.1\\microsoft.extensions.hosting.abstractions.2.1.1.nupkg.sha512",
     "C:\\Users\\Dom\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
     "C:\\Users\\Dom\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Dom\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
@@ -43,6 +45,9 @@
     "C:\\Users\\Dom\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Dom\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Dom\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
+    "C:\\Users\\Dom\\.nuget\\packages\\quartz\\3.3.3\\quartz.3.3.3.nupkg.sha512",
+    "C:\\Users\\Dom\\.nuget\\packages\\quartz.extensions.dependencyinjection\\3.3.3\\quartz.extensions.dependencyinjection.3.3.3.nupkg.sha512",
+    "C:\\Users\\Dom\\.nuget\\packages\\quartz.extensions.hosting\\3.3.3\\quartz.extensions.hosting.3.3.3.nupkg.sha512",
     "C:\\Users\\Dom\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\Dom\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\Dom\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
