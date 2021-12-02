@@ -4,6 +4,6 @@ namespace FISharer.Services.Interfaces
 {
     public interface IFilesCleaner
     {
-        Task ClearAsync(IFilesStorageService filesStorage);
+        Task ClearAsync();
     }
 }

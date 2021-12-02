@@ -14,17 +14,17 @@ namespace FISharer.Services
 
         private readonly IFilesStorageService _filesStorage;
 
-        public async Task ClearAsync(IFilesStorageService filesStorage)
+        public async Task ClearAsync()
         {
             await Task.Run(() =>
             {
-                var deletedFiles = filesStorage.DeleteAllExpired();
+                var deletedFiles = _filesStorage.DeleteAllExpired();
             });
         }
 
         public async Task Execute(IJobExecutionContext context)
         {
-            await ClearAsync(null);
+            await ClearAsync();
         }
     }
 }
