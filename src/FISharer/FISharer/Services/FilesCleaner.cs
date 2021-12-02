@@ -18,13 +18,11 @@ namespace FISharer.Services
         {
             await Task.Run(() =>
             {
-                var deletedFiles = _filesStorage.DeleteAllExpired();
+                var deletedFiles = _filesStorage.DeleteAllExpiredAsync();
             });
         }
 
-        public async Task Execute(IJobExecutionContext context)
-        {
+        public async Task Execute(IJobExecutionContext context) =>
             await ClearAsync();
-        }
     }
 }
