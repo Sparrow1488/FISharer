@@ -18,7 +18,11 @@ namespace FISharer.Services
                 .WithIdentity("FilesCleanerScheduler", "FilesSchedulers")
                 .StartNow()
                 .WithSimpleSchedule(x => x
+<<<<<<< HEAD
                     .WithIntervalInSeconds(5)
+=======
+                    .WithIntervalInSeconds(1)
+>>>>>>> 63f120dcbfcca49bb7b54bf817805e9c09cc8506
                     .RepeatForever())
                 .Build();
 

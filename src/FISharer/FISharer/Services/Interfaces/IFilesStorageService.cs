@@ -12,6 +12,10 @@ namespace FISharer.Services.Interfaces
         Task<ClientData> GetAsync(string token);
         ClientData Get(string token);
         IEnumerable<DataInfo> GetDataInfos(string token);
+<<<<<<< HEAD
         Task<int> DeleteAllExpiredAsync();
+=======
+        int DeleteAllExpired();
+>>>>>>> 63f120dcbfcca49bb7b54bf817805e9c09cc8506
     }
 }

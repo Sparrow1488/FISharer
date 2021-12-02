@@ -87,6 +87,7 @@ namespace FISharer.Services
             return findInfos ?? new List<DataInfo>();
         }
 
+<<<<<<< HEAD
         public async Task<int> DeleteAllExpiredAsync()
         {
             int removedCount = 0;
@@ -99,10 +100,20 @@ namespace FISharer.Services
                     var file = _db.Files.Remove(item);
                 }
                 var success = _db.SaveChanges();
+=======
+        public int DeleteAllExpired()
+        {
+            int removedCount = 0;
+            var expiredFiles = _db.Files.Where(file => (file.CreateTime - DateTime.Now) >= TimeSpan.FromMinutes(20));
+            if (expiredFiles != null)
+            {
+                _db.Files.RemoveRange(expiredFiles);
+>>>>>>> 63f120dcbfcca49bb7b54bf817805e9c09cc8506
                 removedCount = expiredFiles.Count();
             }
             return removedCount;
         }
+<<<<<<< HEAD
 
         private bool CheckTime(DateTime time)
         {
@@ -110,5 +121,7 @@ namespace FISharer.Services
             var b = subs >= TimeSpan.FromMinutes(20);
             return b;
         }
+=======
+>>>>>>> 63f120dcbfcca49bb7b54bf817805e9c09cc8506
     }
 }

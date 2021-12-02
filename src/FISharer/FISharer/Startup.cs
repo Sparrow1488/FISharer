@@ -34,6 +34,7 @@ namespace FISharer
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IFilesCleanerScheduler scheduler)
         {
+            scheduler.StartAsync().GetAwaiter().GetResult();
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
             else {
