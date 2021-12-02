@@ -86,5 +86,17 @@ namespace FISharer.Services
                 info.ArchiveData = null;
             return findInfos ?? new List<DataInfo>();
         }
+
+        public int DeleteAllExpired()
+        {
+            int removedCount = 0;
+            var expiredFiles = _db.Files.Where(file => (file.CreateTime - DateTime.Now) >= TimeSpan.FromMinutes(20));
+            if (expiredFiles != null)
+            {
+                _db.Files.RemoveRange(expiredFiles);
+                removedCount = expiredFiles.Count();
+            }
+            return removedCount;
+        }
     }
 }

@@ -58,5 +58,10 @@ namespace FISharer.Services
         {
             throw new NotImplementedException();
         }
+
+        public int DeleteAllExpired()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
