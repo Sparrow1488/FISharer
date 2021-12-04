@@ -11,6 +11,7 @@ namespace FISharer.Entities
         public string Name { get; set; }
         [Range(1, long.MaxValue)]
         public long Size { get; set; }
+        public int? ArchiveDataId { get; set; }
         public ClientData ArchiveData { get; set; }
     }
 }

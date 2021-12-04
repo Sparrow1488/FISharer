@@ -10,5 +10,13 @@ namespace FISharer.Data
         }
         public DbSet<ClientData> Files { get; set; }
         public DbSet<DataInfo> FilesInfos { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<DataInfo>()
+                .HasOne(p => p.ArchiveData)
+                .WithMany(t => t.FilesInfo)
+                .OnDelete(DeleteBehavior.Cascade);
+        }
     }
 }

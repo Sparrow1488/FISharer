@@ -59,11 +59,12 @@ namespace FISharer.Services
             throw new NotImplementedException();
         }
 
-<<<<<<< HEAD
-        public Task<int> DeleteAllExpiredAsync()
-=======
         public int DeleteAllExpired()
->>>>>>> 63f120dcbfcca49bb7b54bf817805e9c09cc8506
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> DeleteAllExpiredAsync()
         {
             throw new NotImplementedException();
         }

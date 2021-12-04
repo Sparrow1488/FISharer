@@ -6443,19 +6443,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dom\\.nuget\\packages\\": {}
+    "C:\\Users\\Александр\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dom\\Desktop\\Репозитории\\FISharer\\src\\FISharer\\FISharer\\FISharer.csproj",
+      "projectUniqueName": "C:\\Users\\Александр\\Desktop\\Repsitories\\FISharer\\src\\FISharer\\FISharer\\FISharer.csproj",
       "projectName": "FISharer",
-      "projectPath": "C:\\Users\\Dom\\Desktop\\Репозитории\\FISharer\\src\\FISharer\\FISharer\\FISharer.csproj",
-      "packagesPath": "C:\\Users\\Dom\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dom\\Desktop\\Репозитории\\FISharer\\src\\FISharer\\FISharer\\obj\\",
+      "projectPath": "C:\\Users\\Александр\\Desktop\\Repsitories\\FISharer\\src\\FISharer\\FISharer\\FISharer.csproj",
+      "packagesPath": "C:\\Users\\Александр\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Александр\\Desktop\\Repsitories\\FISharer\\src\\FISharer\\FISharer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Dom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Александр\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6526,16 +6526,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\Dom\\Desktop\\Репозитории\\FISharer\\src\\FISharer\\FISharer\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

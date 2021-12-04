@@ -1156,3 +1156,6 @@ C:\Users\Dom\Desktop\Репозитории\FISharer\src\FISharer\FISharer\bin\D
 C:\Users\Dom\Desktop\Репозитории\FISharer\src\FISharer\FISharer\bin\Debug\netcoreapp3.1\Quartz.Extensions.Hosting.dll
 =======
 >>>>>>> 63f120dcbfcca49bb7b54bf817805e9c09cc8506
+C:\Users\Александр\Desktop\Repsitories\FISharer\src\FISharer\FISharer\bin\Debug\netcoreapp3.1\Quartz.dll
+C:\Users\Александр\Desktop\Repsitories\FISharer\src\FISharer\FISharer\bin\Debug\netcoreapp3.1\Quartz.Extensions.DependencyInjection.dll
+C:\Users\Александр\Desktop\Repsitories\FISharer\src\FISharer\FISharer\bin\Debug\netcoreapp3.1\Quartz.Extensions.Hosting.dll
