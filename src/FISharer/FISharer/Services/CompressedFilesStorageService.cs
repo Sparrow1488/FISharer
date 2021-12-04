@@ -91,7 +91,7 @@ namespace FISharer.Services
         {
             int removedCount = 0;
 
-            var ex = DateTime.Now - TimeSpan.FromMinutes(1);
+            var ex = DateTime.Now - TimeSpan.FromMinutes(20);
             var expiredFiles = _db.Files.Where(file => file.CreateTime <= ex).ToList();
             if (expiredFiles != null)
             {
