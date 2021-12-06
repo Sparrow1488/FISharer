@@ -40,14 +40,9 @@ $(document).ready(function () {
         hidePreloader();
     }, 1500);
 
-    $(".up-btn").click(function(){
-        setNavBtnActiveByIndex(0);
-        window.scroll({top: 0, left: 0, behavior: 'smooth' });
-    });
+    
 
-    $(".burger").click(function() {
-        $(".menu").toggle("slow");
-    });
+    
 
     window.addEventListener("click", function(e) {
         const menu = document.querySelector(".menu");
