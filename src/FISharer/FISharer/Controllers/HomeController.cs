@@ -30,7 +30,7 @@ namespace FISharer.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(UserViewModel vm)
         {
-            IActionResult result = BadRequest();
+            IActionResult result = Redirect(vm.ReturnUrl);
             var foundUser = await _userManager.FindByNameAsync(vm.Login);
             if (foundUser != null)
             {
@@ -44,7 +44,7 @@ namespace FISharer.Controllers
         [HttpPost]
         public async Task<IActionResult> Registration(UserViewModel vm)
         {
-            IActionResult result = BadRequest();
+            IActionResult result = Redirect(vm.ReturnUrl);
 
             var user = new User() { UserName = vm.Login };
             var regResult = await _userManager.CreateAsync(user, vm.Password);

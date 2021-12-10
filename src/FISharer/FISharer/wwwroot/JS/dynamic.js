@@ -12,7 +12,12 @@
         e.preventDefault();
         const href = this.href;
         if (href && !href.includes("#")) {
-            $("body").load(href);
+            console.log("asd");
+            const response = await fetch(href);
+            console.log(response);
+            const html = await response.text();
+            $("body").html(html);
+            //$("body").load(href);
             setTimeout(() => hidePreloader(), 1500);
         }
         else console.log("Не навигационная кнопка");
