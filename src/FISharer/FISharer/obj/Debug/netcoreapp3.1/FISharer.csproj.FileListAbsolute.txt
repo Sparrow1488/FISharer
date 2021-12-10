@@ -1161,3 +1161,15 @@ C:\Users\Александр\Desktop\Repsitories\FISharer\src\FISharer\FISharer\b
 C:\Users\Александр\Desktop\Repsitories\FISharer\src\FISharer\FISharer\bin\Debug\netcoreapp3.1\Quartz.Extensions.Hosting.dll
 C:\Users\aleks\OneDrive\Desktop\Илья\Repositories\FISharer\src\FISharer\FISharer\bin\Debug\netcoreapp3.1\Quartz.Extensions.DependencyInjection.dll
 C:\Users\aleks\OneDrive\Desktop\Илья\Repositories\FISharer\src\FISharer\FISharer\bin\Debug\netcoreapp3.1\Quartz.Extensions.Hosting.dll
+C:\Users\Dom\Desktop\Репозитории\FISharer\src\FISharer\FISharer\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Dom\Desktop\Репозитории\FISharer\src\FISharer\FISharer\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Dom\Desktop\Репозитории\FISharer\src\FISharer\FISharer\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Dom\Desktop\Репозитории\FISharer\src\FISharer\FISharer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Dom\Desktop\Репозитории\FISharer\src\FISharer\FISharer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Dom\Desktop\Репозитории\FISharer\src\FISharer\FISharer\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
+C:\Users\aleks\OneDrive\Desktop\Илья\Repositories\FISharer\src\FISharer\FISharer\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\aleks\OneDrive\Desktop\Илья\Repositories\FISharer\src\FISharer\FISharer\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\aleks\OneDrive\Desktop\Илья\Repositories\FISharer\src\FISharer\FISharer\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\aleks\OneDrive\Desktop\Илья\Repositories\FISharer\src\FISharer\FISharer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\aleks\OneDrive\Desktop\Илья\Repositories\FISharer\src\FISharer\FISharer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\aleks\OneDrive\Desktop\Илья\Repositories\FISharer\src\FISharer\FISharer\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs

@@ -1,0 +1,31 @@
+﻿@{ 
+    ViewData["Title"] = "Login";
+    string returnUrl = @Context.Request.Query["returnurl"];
+}
+
+<h1 class="title title_dark">Authorize</h1>
+
+<div class="container">
+    <div class="b-login">
+        <form class="login__form" asp- asp-controller="Home" asp-action="Login" method="post" asp-route-returnurl="@returnUrl">
+            @*<input class="textbox" name="ReturnUrl" value="" type="text" />*@
+            <h3 class="title title_dark">Sign In</h3>
+            <input class="textbox textbox_dark" name="Login" value="" type="text" />
+            <input class="textbox textbox_dark" name="Password" value="" type="text" />
+
+            <input class="btn btn_dark" type="submit" value="Sign In" />
+        </form>
+    </div>
+
+    <div class="b-registration">
+        <form class="registration__form" asp- asp-controller="Home" asp-action="Registration" method="post" asp-route-returnurl="@returnUrl">
+            @*<input class="textbox" name="ReturnUrl" value="" type="text" />*@
+            <h3 class="title title_dark">Sign In</h3>
+            <input class="textbox textbox_dark" name="Login" value="" type="text" />
+            <input class="textbox textbox_dark" name="Password" value="" type="text" />
+
+            <input class="btn btn_dark" type="submit" value="Create Account" />
+        </form>
+    </div>
+</div>
+
