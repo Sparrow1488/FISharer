@@ -1,6 +1,7 @@
 ﻿using FISharer.Data;
 using FISharer.Entities;
 using FISharer.Services.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,9 +12,9 @@ namespace FISharer.Services
     {
         private readonly ClientsDbContext _db;
 
-        public ClientsStorageService(ClientsDbContext db)
+        public ClientsStorageService()
         {
-            _db = db;
+            //_db = db;
         }
         public async Task CreateAsync(Client client)
         {
@@ -23,8 +24,9 @@ namespace FISharer.Services
 
         public List<Client> GetAll()
         {
-            var list = _db.Clients.ToList();
-            return list;
+            //var list = _db.Clients.ToList();
+            //return list;
+            throw new NotImplementedException();
         }
     }
 }

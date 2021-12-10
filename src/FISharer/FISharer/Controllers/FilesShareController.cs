@@ -2,6 +2,7 @@
 using FISharer.Models;
 using FISharer.Services.Interfaces;
 using FISharer.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -11,7 +12,6 @@ using System.Threading.Tasks;
 
 namespace FISharer.Controllers
 {
-
     public class FilesShareController : Controller
     {
         public FilesShareController(IFilesStorageService storage)
@@ -27,10 +27,12 @@ namespace FISharer.Controllers
             return View();
         }
 
+        [Authorize(Policy = "Admin")]
         public IActionResult Download()
         {
             return View();
         }
+
 
         [DisableRequestSizeLimit]
         [HttpPost]

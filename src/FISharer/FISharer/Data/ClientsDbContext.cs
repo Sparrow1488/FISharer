@@ -1,13 +1,13 @@
 ﻿using FISharer.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Diagnostics.CodeAnalysis;
 
 namespace FISharer.Data
 {
-    public class ClientsDbContext : DbContext
+    public class ClientsDbContext : IdentityDbContext<Client, ClientRole, Guid>
     {
-        public ClientsDbContext(DbContextOptions options) : base(options) { }
-
-        public DbSet<Client> Clients { get; set; }
+        public ClientsDbContext([NotNull]DbContextOptions options) : base(options) { }
     }
 }
