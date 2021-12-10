@@ -2,6 +2,7 @@
 using FISharer.Models;
 using FISharer.Services.Interfaces;
 using FISharer.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -11,7 +12,6 @@ using System.Threading.Tasks;
 
 namespace FISharer.Controllers
 {
-
     public class FilesShareController : Controller
     {
         public FilesShareController(IFilesStorageService storage)
@@ -22,15 +22,18 @@ namespace FISharer.Controllers
         private const long BYTES_SIZE_OF_100_MB = 104857600;
         private readonly IFilesStorageService _storage;
 
+        [Authorize]
         public IActionResult Index()
         {
             return View();
         }
 
+        [Authorize]
         public IActionResult Download()
         {
             return View();
         }
+
 
         [DisableRequestSizeLimit]
         [HttpPost]
