@@ -42,7 +42,14 @@
                 <input type="text" class="textbox text_small textbox_dark token-output" value="//d-token-1488-228-secretWord%20iNeedPizza" disabled>
                 <a href="#" class="btn btn_dark btn_static text_small copy-link-btn">Copy</a>
             </div>
-            <a asp-controller="Home" asp-action="Index" class="btn btn_purple back-page-btn text_small" hidden>← Back to Home Page</a>
+            <div class="b-create-account">
+                <p class="text_dark text_small">Create an temporary account NOW!</p>
+                <p><a asp-controller="Home" asp-action="Login" class="btn btn_static btn_green text_small">Create new account</a></p>
+                <p><a asp-controller="Profile" asp-action="Index" class="btn btn_green text_small">Visit your exists account</a></p>
+            </div>
+            <div>
+                <a asp-controller="Home" asp-action="Index" class="btn btn_purple back-page-btn text_small" hidden>Back to Home</a>
+            </div>
         </div>
     </div>
 </main>

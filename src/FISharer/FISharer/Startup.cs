@@ -1,5 +1,4 @@
 using FISharer.Data;
-using FISharer.Entities;
 using FISharer.Entities.Clients;
 using FISharer.Services;
 using FISharer.Services.Interfaces;

@@ -241,6 +241,11 @@ hr {
     width: 25px;
     margin-left: 15px;
 }
+.profile__img {
+    height: 25px;
+    width: 25px;
+    margin-left: 15px;
+}
 .menu {
     padding: 30px 0;
     display: none;
